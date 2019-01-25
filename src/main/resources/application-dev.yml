@@ -1,0 +1,11 @@
+mybatis-plus:
+  global-config:
+    refresh: true
+logging:
+  level:
+    com:
+      jswhzl: DEBUG
+debug: true
+
+
+

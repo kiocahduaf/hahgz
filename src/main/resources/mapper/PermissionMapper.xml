@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jswhzl.api.mapper.PermissionMapper">
+
+    <select id="findMenu" resultType="com.jswhzl.api.entity.Permission">
+        SELECT DISTINCT
+        p.*
+        FROM
+        t_permission p
+        LEFT JOIN t_role_permission rp ON p.perId = rp.perId
+        WHERE 1 = 1
+
+        <if test="null != parentId and 0 != parentId">
+            AND p.parentId = #{parentId, jdbcType=BIGINT}
+        </if>
+        <if test="null == parentId ">
+            AND p.parentId is null
+        </if>
+        <if test="null != roleId ">
+            AND rp.roleId = #{roleId, jdbcType=BIGINT}
+        </if>
+        <if test="null != level ">
+            AND p.level = #{level, jdbcType=INT}
+        </if>
+        order by p.seq
+    </select>
+</mapper>

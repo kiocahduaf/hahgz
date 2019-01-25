@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jswhzl.api.mapper.UserMapper">
+
+    <select id="findUserListByDepId" resultType="com.jswhzl.api.entity.User">
+        SELECT
+            u.*
+        FROM
+            t_user u
+        LEFT JOIN t_user_department ud ON u.userId = ud.userId
+        WHERE
+            ud.depId = #{depId, jdbcType=BIGINT}
+    </select>
+    <select id="findExpertUserListByHouseId" resultType="com.jswhzl.common.vo.ExpertUserVO">
+        SELECT
+            u.*, he.type as 'expertType'
+        FROM
+            t_user u
+        LEFT JOIN t_house_expert he ON u.userId = he.userId
+        WHERE
+            he.houseId = #{houseId, jdbcType=BIGINT}
+    </select>
+</mapper>
