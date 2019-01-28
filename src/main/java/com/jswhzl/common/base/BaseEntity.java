@@ -14,7 +14,7 @@ import java.util.List;
  * Entity基类
  *
  * @param <T>
- * @author JinJichao
+ * @author xuchao
  */
 public class BaseEntity<T extends BaseEntity<?>> extends Model<T> {
 

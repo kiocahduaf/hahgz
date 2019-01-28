@@ -11,7 +11,7 @@ import java.io.Serializable;
  * BaseDao接口基类
  *
  * @param <T>
- * @author JinJichao
+ * @author xuchao
  */
 public interface BaseDao<T> extends BaseMapper<T>,Serializable {
 

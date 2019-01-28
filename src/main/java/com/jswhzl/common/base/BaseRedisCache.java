@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * Redis缓存基类
  *
  * @param <T>
- * @author Jinjichao
+ * @author xuchao
  */
 @Component
 public class BaseRedisCache<T> {

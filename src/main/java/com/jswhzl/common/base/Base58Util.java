@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * Base58 压缩算法辅助类
  * 
- * @author JinJichao
+ * @author xuchao
  *
  */
 public class Base58Util {
