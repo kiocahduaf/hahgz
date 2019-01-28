@@ -19,7 +19,7 @@ public class Constants {
     /**
      * AES加密解密的password
      */
-    public static final String AES_PASSWORD = "xuchao2018";
+    public static final String AES_PASSWORD = "xuchao2019";
     /**
      * 默认系统登录有效期
      */
