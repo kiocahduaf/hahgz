@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 字符串工具类
  *
- * @author JinJichao
+ * @author xuchao
  */
 public class StringUtil extends StringUtils {
 

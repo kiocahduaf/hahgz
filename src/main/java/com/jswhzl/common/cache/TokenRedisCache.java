@@ -8,7 +8,7 @@ import com.jswhzl.common.bean.Token;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Jinjichao
+ * @author xuchao
  */
 @Component
 public class TokenRedisCache extends BaseRedisCache<Token> {
