@@ -5,7 +5,7 @@ logging:
   level:
     com:
       jswhzl: DEBUG
-debug: true
+debug: false
 
 
 
