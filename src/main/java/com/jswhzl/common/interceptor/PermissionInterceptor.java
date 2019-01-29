@@ -1,22 +1,22 @@
 package com.jswhzl.common.interceptor;
 
-import com.alibaba.fastjson.JSONObject;
-import com.jswhzl.api.entity.Permission;
-import com.jswhzl.api.entity.User;
-import com.jswhzl.api.service.TokenService;
-import com.jswhzl.api.service.impl.PermissionServiceImpl;
-import com.jswhzl.common.bean.ReturnEntityError;
-import com.jswhzl.common.bean.Token;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
-import java.util.List;
+import com.alibaba.fastjson.JSONObject;
+import com.jswhzl.api.entity.User;
+import com.jswhzl.api.service.TokenService;
+import com.jswhzl.api.service.impl.PermissionServiceImpl;
+import com.jswhzl.common.bean.ReturnEntityError;
+import com.jswhzl.common.bean.Token;
 
 /**
  * @author xuchao
