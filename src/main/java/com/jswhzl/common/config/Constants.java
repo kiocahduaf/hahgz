@@ -64,14 +64,4 @@ public class Constants {
     public static final String ROLE_APPRAISALORGANIZATION = "1073504066425815042";
     public static final String ROLE_WORK_USER = "1082568472149229570";
 
-    /**
-     * 鉴定受理通知模板ID
-     */
-    public static final String ACCEPT_TRMPLATE_ID = "dF9Wzamyl0XH7ooQoByaGnqJo2tIqck9ZiexkJZuLds";
-
-    /**
-     * 危房通知书通知模板ID
-     */
-    public static final String DANGER_TRMPLATE_ID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-
 }

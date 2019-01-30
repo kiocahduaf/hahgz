@@ -35,8 +35,8 @@ public class PermissionInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 //        System.out.println("被拦截啦！！！！！！！！！！");
-        String uri = request.getRequestURI();
-        System.out.println("uri=" + uri);
+        String url = request.getRequestURI();
+        System.out.println("url=" + url);
         String authorization = request.getHeader("Authorization");
         System.out.println("authorization=" + authorization);
         String method = request.getMethod();
@@ -51,8 +51,8 @@ public class PermissionInterceptor implements HandlerInterceptor {
                 }
                 User user = tokenService.getUserInfo(request, response);
                 if (null != user) {
-                    String url = method + ":" + uri.replace("/hahgz", "");
-                    System.out.println("url=" + url);
+                    String uri = method + ":" + url.replace("/hahgz", "");
+                    System.out.println("url=" + uri);
                     /*List<Permission> permissions = permissionService.findListByUserId(user.getUserId());
                     for (Permission permission : permissions) {
                         if (StringUtils.isNotBlank(permission.getPerCode())) {
@@ -91,8 +91,8 @@ public class PermissionInterceptor implements HandlerInterceptor {
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         System.out.println(tokenService.getExpire(request, response));
-        String uri = request.getRequestURI();
-        System.out.println("after uri=" + uri);
+        String url = request.getRequestURI();
+        System.out.println("after url=" + url);
         String authorization = request.getHeader("Authorization");
         System.out.println("after authorization=" + authorization);
         String method = request.getMethod();
