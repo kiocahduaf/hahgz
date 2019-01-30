@@ -3,7 +3,10 @@ package com.jswhzl.api.controller;
 
 import com.jswhzl.api.service.TokenService;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.bind.annotation.*;
+
+import com.jswhzl.common.annotation.SysLog;
 import com.jswhzl.common.base.BaseController;
 import org.springframework.validation.FieldError;
 import com.jswhzl.common.bean.ReturnEntity;
@@ -120,6 +123,7 @@ public class DictionaryController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("新增字典")
     @PostMapping
     public ReturnEntity save(@Validated @RequestBody Dictionary dictionary, BindingResult result,
                              HttpServletRequest request, HttpServletResponse response) {
@@ -156,6 +160,7 @@ public class DictionaryController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("修改字典")
     @PutMapping("/{id}")
     public ReturnEntity updateById(@PathVariable("id") Long id, @Validated @RequestBody Dictionary dictionary, BindingResult result,
                                    HttpServletRequest request, HttpServletResponse response) {
@@ -184,6 +189,7 @@ public class DictionaryController extends BaseController {
      * @param id
      * @return
      */
+    @SysLog("删除字典")
     @DeleteMapping("/{id}")
     public ReturnEntity deleteById(@PathVariable("id") Long id) {
         if (null == dictionaryService.getById(id)) {

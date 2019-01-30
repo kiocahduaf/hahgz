@@ -52,7 +52,7 @@ public class MpGenerator {
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("xuchao@010203!");
+        dsc.setPassword("root");
         mpg.setDataSource(dsc);
 
         // 包配置

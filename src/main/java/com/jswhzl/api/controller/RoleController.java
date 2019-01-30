@@ -27,6 +27,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jswhzl.api.entity.Role;
 import com.jswhzl.api.service.TokenService;
 import com.jswhzl.api.service.impl.RoleServiceImpl;
+import com.jswhzl.common.annotation.SysLog;
 import com.jswhzl.common.base.BaseController;
 import com.jswhzl.common.bean.ReturnEntity;
 import com.jswhzl.common.bean.ReturnEntityError;
@@ -101,6 +102,7 @@ public class RoleController extends BaseController {
      * @param id
      * @return
      */
+    @SysLog("查看详情")
     @GetMapping("/detail/{id}")
     public ReturnEntity selectById(@PathVariable("id") Long id) {
         try {
