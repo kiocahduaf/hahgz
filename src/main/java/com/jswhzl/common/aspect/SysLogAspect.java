@@ -26,8 +26,9 @@ import com.jswhzl.common.util.IPUtils;
 /**
  * 系统日志，切面处理类
  *
- * @author Mark sunlightcs@gmail.com
- * @since 1.3.0 2017-03-08
+ * @author xuchao
+ * @email 1009470059@qq.com
+ * @date 2019-01-26 10:33
  */
 @Aspect
 @Component
