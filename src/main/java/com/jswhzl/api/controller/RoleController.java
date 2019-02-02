@@ -102,7 +102,7 @@ public class RoleController extends BaseController {
      * @param id
      * @return
      */
-    @SysLog("查看详情")
+    @SysLog("查看角色")
     @GetMapping("/detail/{id}")
     public ReturnEntity selectById(@PathVariable("id") Long id) {
         try {
@@ -126,6 +126,7 @@ public class RoleController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("新增角色")
     @PostMapping
     public ReturnEntity save(@Validated @RequestBody Role role, BindingResult result,
                              HttpServletRequest request, HttpServletResponse response) {
@@ -161,6 +162,7 @@ public class RoleController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("修改角色")
     @PutMapping("/{id}")
     public ReturnEntity updateById(@PathVariable("id") Long id, @Validated @RequestBody Role role, BindingResult result,
                                    HttpServletRequest request, HttpServletResponse response) {
@@ -188,6 +190,7 @@ public class RoleController extends BaseController {
      * @param id
      * @return
      */
+    @SysLog("删除角色")
     @DeleteMapping("/{id}")
     public ReturnEntity deleteById(@PathVariable("id") Long id) {
         if (null == roleService.getById(id)) {
@@ -210,6 +213,7 @@ public class RoleController extends BaseController {
      * @param response
      * @return
      */
+    @SysLog("授权角色")
     @PostMapping("/grant/{id}")
     public ReturnEntity grant(@PathVariable("id") Long id, @RequestBody PermissionDTO permissionDTO,
                               HttpServletRequest request, HttpServletResponse response) {

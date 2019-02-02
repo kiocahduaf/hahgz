@@ -30,6 +30,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.jswhzl.api.entity.User;
 import com.jswhzl.api.service.impl.RoleServiceImpl;
 import com.jswhzl.api.service.impl.UserServiceImpl;
+import com.jswhzl.common.annotation.SysLog;
 import com.jswhzl.common.base.BaseController;
 import com.jswhzl.common.bean.ReturnEntity;
 import com.jswhzl.common.bean.ReturnEntityError;
@@ -124,6 +125,7 @@ public class UserController extends BaseController {
      * @param id
      * @return
      */
+    @SysLog("管理员详情")
     @GetMapping("/detail/{id}")
     public ReturnEntity selectById(@PathVariable("id") Long id) {
         try {
@@ -147,6 +149,7 @@ public class UserController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("新增管理员")
     @PostMapping
     public ReturnEntity save(@Validated @RequestBody UserDTO user, BindingResult result,
                              HttpServletRequest request, HttpServletResponse response) {
@@ -215,6 +218,7 @@ public class UserController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("修改管理员")
     @PutMapping("/{id}")
     public ReturnEntity updateById(@PathVariable("id") Long id, @Validated @RequestBody UserDTO user, BindingResult result,
                                    HttpServletRequest request, HttpServletResponse response) {
@@ -269,6 +273,7 @@ public class UserController extends BaseController {
      * @param id 用户ID
      * @return ReturnEntity
      */
+    @SysLog("删除管理员")
     @DeleteMapping("/{id}")
     public ReturnEntity deleteById(@PathVariable("id") Long id) {
         if (null == userService.getById(id)) {

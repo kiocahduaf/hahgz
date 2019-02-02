@@ -19,6 +19,7 @@ import com.jswhzl.api.entity.Role;
 import com.jswhzl.api.entity.User;
 import com.jswhzl.api.service.impl.RoleServiceImpl;
 import com.jswhzl.api.service.impl.UserServiceImpl;
+import com.jswhzl.common.annotation.SysLog;
 import com.jswhzl.common.base.BaseController;
 import com.jswhzl.common.bean.ReturnEntity;
 import com.jswhzl.common.bean.ReturnEntityError;
@@ -59,6 +60,7 @@ public class LoginController extends BaseController {
      * @param response
      * @return
      */
+    @SysLog("用户登录")
     @PostMapping("/login")
     public ReturnEntity login(@RequestParam("userName") String userName, @RequestParam("password") String password,
                               HttpServletRequest request, HttpServletResponse response) {
@@ -184,6 +186,7 @@ public class LoginController extends BaseController {
      * @param response
      * @return
      */
+    @SysLog("用户退出")
     @GetMapping("/logout")
     public ReturnEntity logout(HttpServletRequest request, HttpServletResponse response) {
         String authorization = request.getHeader("Authorization");

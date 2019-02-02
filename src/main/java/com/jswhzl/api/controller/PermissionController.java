@@ -5,6 +5,8 @@ import com.jswhzl.api.service.TokenService;
 import com.jswhzl.common.vo.MenuVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.*;
+
+import com.jswhzl.common.annotation.SysLog;
 import com.jswhzl.common.base.BaseController;
 import org.springframework.validation.FieldError;
 import com.jswhzl.common.bean.ReturnEntity;
@@ -98,6 +100,7 @@ public class PermissionController extends BaseController {
      * @param id
      * @return
      */
+    @SysLog("权限详情")
     @GetMapping("/detail/{id}")
     public ReturnEntity selectById(@PathVariable("id") Long id) {
         try {
@@ -121,6 +124,7 @@ public class PermissionController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("新增权限")
     @PostMapping
     public ReturnEntity save(@Validated @RequestBody Permission permission, BindingResult result,
                              HttpServletRequest request, HttpServletResponse response) {
@@ -156,6 +160,7 @@ public class PermissionController extends BaseController {
      * @param result
      * @return
      */
+    @SysLog("修改权限")
     @PutMapping("/{id}")
     public ReturnEntity updateById(@PathVariable("id") Long id, @Validated @RequestBody Permission permission, BindingResult result,
                                    HttpServletRequest request, HttpServletResponse response) {
@@ -183,6 +188,7 @@ public class PermissionController extends BaseController {
      * @param id
      * @return
      */
+    @SysLog("删除权限")
     @DeleteMapping("/{id}")
     public ReturnEntity deleteById(@PathVariable("id") Long id) {
         if (null == permissionService.getById(id)) {
